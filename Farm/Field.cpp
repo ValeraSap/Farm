@@ -1,19 +1,30 @@
+#include "Cell.cpp"
+#include "EntitiesFactory.cpp"
 class Field {
 	int size;
-	//Cell **cells;
-
+	Cell **cells;
+	
 };
 class FieldCreator {
+	
 public:
 	FieldCreator() {
-		Create();
+		CreateField();
 	}
-	virtual Field Create() = 0;// factory method
+	virtual Field CreateField() = 0;// factory method
 };
 class GrassFieldCreator : public FieldCreator {
+	
 public:
-	Field Create(){}
+	Field CreateField(FieldEntitiesFactory fieldEntitiesFactory){	
+		FieldEntitiesFactory* fieldEntitiesFactory = new GrassFieldEntitiesFactory();
+		Field* field = new GrassField(fieldEntitiesFactory);
+	}
 };
 class GrassField: public Field {
-
+	FieldEntitiesFactory* fieldEntitiesFactory;
+public:
+	GrassField(FieldEntitiesFactory* fieldEntitiesFactory) {
+		this->fieldEntitiesFactory = fieldEntitiesFactory;
+	}
 };

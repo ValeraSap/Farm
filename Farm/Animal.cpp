@@ -1,21 +1,12 @@
 enum Animals{SHEEP, COW};
 class Animal {
 public:
+	virtual void Move();
+	virtual void Eat();
+	virtual void Idle();
+};
+class Sheep :public Animal {
 	void Move();
 	void Eat();
 	void Idle();
-};
-class AnimalCreator {
-public:
-	AnimalCreator() {
-		CreateAnimal(Animals);
-	}
-	virtual Animal CreateAnimal(Animals) = 0; //fabric method
-};
-class SheepCreator :public AnimalCreator {
-public:
-	Animal CreateAnimal(Animals);
-};
-class Sheep: public Animal{
-
 };
