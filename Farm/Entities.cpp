@@ -1,10 +1,10 @@
 class Object {
 
 };
-class UnInteractiveObj:public Object { //object without posibility to interact 
+class UnInteractiveObj :public Object { //object without posibility to interact 
 
 };
-class Stone:public UnInteractiveObj {
+class Stone :public UnInteractiveObj {
 
 };
 class InteractiveObj :public Object {

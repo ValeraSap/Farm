@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-enum Direction {North, South, East, West};
+
 
 int main()
 {

@@ -5,7 +5,7 @@ class FieldEntitiesFactory {
 	virtual InteractiveObj* createInteractiveObj();
 	virtual UnInteractiveObj* createUnInteractiveObj();
 };
-class GrassFieldEntitiesFactory:FieldEntitiesFactory {
+class GrassFieldEntitiesFactory:public FieldEntitiesFactory {
 	Animal* createAnimal() {
 		return new Sheep();
 	}

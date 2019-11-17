@@ -1,22 +1,24 @@
 #include "Cell.cpp"
 #include "EntitiesFactory.cpp"
+#include "Animal.cpp"
+#include <list>
 class Field {
 	int size;
 	Cell **cells;
-	
+std::list <Animal> animal;
 };
 class FieldCreator {
 	
 public:
-	FieldCreator() {
-		CreateField();
+	FieldCreator(FieldEntitiesFactory fieldEntitiesFactory) {
+		CreateField(fieldEntitiesFactory);
 	}
-	virtual Field CreateField() = 0;// factory method
+	virtual Field CreateField(FieldEntitiesFactory fieldEntitiesFactory);// factory method
 };
 class GrassFieldCreator : public FieldCreator {
 	
 public:
-	Field CreateField(FieldEntitiesFactory fieldEntitiesFactory){	
+	Field CreateField(FieldEntitiesFactory* fieldEntitiesFactory){	
 		FieldEntitiesFactory* fieldEntitiesFactory = new GrassFieldEntitiesFactory();
 		Field* field = new GrassField(fieldEntitiesFactory);
 	}
