@@ -6,14 +6,15 @@ using namespace std;
 class FieldEntitiesFactory {
 
 public:
-	static FieldEntitiesFactory* Instance();
-	virtual Animal* createAnimal();
-	virtual InteractiveObj* createInteractiveObj();
-	virtual UnInteractiveObj* createUnInteractiveObj();
-protected:
+//	static FieldEntitiesFactory* Instance();
 	FieldEntitiesFactory();
-private:
-	static FieldEntitiesFactory* _instance;
+	virtual Animal* createAnimal()=0;
+	virtual InteractiveObj* createInteractiveObj()=0;
+	virtual UnInteractiveObj* createUnInteractiveObj()=0;
+protected:
+	
+/*private:
+	static FieldEntitiesFactory* _instance;*/
 };
 class GrassFieldEntitiesFactory :public FieldEntitiesFactory {
 public:
@@ -21,5 +22,6 @@ public:
 	Animal* createAnimal();
 	InteractiveObj* createInteractiveObj();
 	UnInteractiveObj* createUnInteractiveObj();
+	
 };
 

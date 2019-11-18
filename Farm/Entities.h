@@ -9,8 +9,8 @@ class Stone :public UnInteractiveObj {
 
 };
 class InteractiveObj :public Entitiy {
-	virtual void Interact();
+	
 };
 class Tree :public InteractiveObj {
-	void Interact();
+	
 };

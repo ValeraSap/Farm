@@ -18,8 +18,8 @@ protected:
 	Field* field;
 public:
 	FieldCreator();
-	FieldCreator(SIZE size);
-	virtual Field* CreateField(SIZE size);// factory method
+//	FieldCreator(SIZE size);
+	//virtual void CreateField(SIZE size)=0;// factory method //рхо тхкд* ю ме бнид!!!!!!!!!!!!!!!!!!!!!!
 
 };
 class GrassFieldCreator : public FieldCreator { //concrete creator 
@@ -28,7 +28,7 @@ public:
 	GrassFieldCreator();
 	GrassFieldCreator(SIZE size);
 
-	Field* CreateField(SIZE size);
+	void CreateField(SIZE size); //рхо тхкд* ю ме бнид!!!!!!!!!!!!!!!!!!!!!!
 	void CreateCells();
 	void ClearCells();
 	~GrassFieldCreator();

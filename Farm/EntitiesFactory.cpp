@@ -9,7 +9,7 @@ using namespace std;
 	}
 	GrassFieldEntitiesFactory::GrassFieldEntitiesFactory() {
 		cout << "GrassFieldEntitiesFactory constructor" << endl;
-		Instance();
+		//Instance();
 	}
 	Animal* GrassFieldEntitiesFactory::createAnimal() {
 		cout << "Animal created" << endl;
@@ -23,11 +23,12 @@ using namespace std;
 		cout << "Stone created" << endl;
 		return new Stone();
 	}
-FieldEntitiesFactory* FieldEntitiesFactory::_instance = 0;
+	
+/*FieldEntitiesFactory* FieldEntitiesFactory::_instance = 0;
 FieldEntitiesFactory* FieldEntitiesFactory::Instance() {
 	if (_instance == 0) {
 		_instance = new GrassFieldEntitiesFactory;
 	}
 	cout << "FieldEntitiesFactory Instance() called" << endl;
 	return _instance;
-}
+}*/

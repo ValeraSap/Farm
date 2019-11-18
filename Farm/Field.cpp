@@ -12,10 +12,10 @@ using namespace std;
 	FieldCreator::FieldCreator() {
 		cout << "FieldCreator default constructor" << endl;
 	}
-	FieldCreator::FieldCreator(SIZE size) {
+	/*FieldCreator::FieldCreator(SIZE size) {
 		cout << "FieldCreator constructor" << endl;
 		CreateField(size);
-	}
+	}*/
 	
 
 	GrassFieldCreator::GrassFieldCreator() {
@@ -23,20 +23,22 @@ using namespace std;
 	}
 	GrassFieldCreator::GrassFieldCreator(SIZE size) {
 		cout << "GrassFieldCreator constructor" << endl;
+		CreateField(size);
 	}
 	
-	Field* GrassFieldCreator::CreateField( SIZE size){ //ÇÀ×ÅÌ ÌÛ ÂÎÇÂÐÀÙÀÅÌ FIELD*. ÑÒÎÈÒ ËÈ ÏÐÎÑÒÎ ÏÅÐÅÄÀÒÜ ÓÊÀÇÀÒÅËÜ 
+	void GrassFieldCreator::CreateField( SIZE size){ //ÇÀ×ÅÌ ÌÛ ÂÎÇÂÐÀÙÀÅÌ FIELD*. ÑÒÎÈÒ ËÈ ÏÐÎÑÒÎ ÏÅÐÅÄÀÒÜ ÓÊÀÇÀÒÅËÜ 
 		cout << "CreateField()" << endl;
 		 fieldEntitiesFactory = new GrassFieldEntitiesFactory();
 		field = new GrassField(size);
 		CreateCells();
 		Animal* a = fieldEntitiesFactory->createAnimal();
 		field->animal.push_back(a);
-		return field;
+		//return field;
 	}
 	
 	GrassFieldCreator::~GrassFieldCreator() {
 		ClearCells();
+		delete fieldEntitiesFactory;
 		cout << "GrassField destructor" << endl;
 	}
 	void GrassFieldCreator::CreateCells() { //ÑÄÅËÀÒÜ ÏÐÎÂÅÐÊÓ ÂÀËÈÄÍÎÑÒÈ!!!!!
