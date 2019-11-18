@@ -1,13 +1,15 @@
+#include <iostream>
 
-#include "Entities.cpp"
-class Cell {
-	Object obj;
+#include "Entities.h"
+#include "Cell.h"
+using namespace std;
 
-public:
-	void setOblect(Object obj) {
-		this->obj = obj;
-	}
-	Object getOblect(Object obj) {
-		return this->obj;
-	}
-};
+Cell::Cell() {
+	cout << "Cell constructor" << endl;
+}
+void Cell::setOblect(Entitiy* ent) {
+	this->ent = ent;
+}
+Entitiy* Cell::getOblect() {
+	return this->ent;
+}
