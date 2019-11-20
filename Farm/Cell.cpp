@@ -7,6 +7,9 @@ using namespace std;
 Cell::Cell() {
 	cout << "Cell constructor" << endl;
 }
+Cell::~Cell() {
+	delete ent;
+}
 void Cell::setOblect(Entitiy* ent) {
 	this->ent = ent;
 }

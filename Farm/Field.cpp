@@ -11,29 +11,20 @@ using namespace std;
 
 	FieldCreator::FieldCreator() {
 		cout << "FieldCreator default constructor" << endl;
-	}
-	/*FieldCreator::FieldCreator(SIZE size) {
-		cout << "FieldCreator constructor" << endl;
-		CreateField(size);
-	}*/
-	
-
+	}	
+		
 	GrassFieldCreator::GrassFieldCreator() {
-		cout << "GrassFieldCreator default constructor" << endl;
-	}
-	GrassFieldCreator::GrassFieldCreator(SIZE size) {
-		cout << "GrassFieldCreator constructor" << endl;
-		CreateField(size);
+		cout << "GrassFieldCreator constructor" << endl;		
 	}
 	
-	void GrassFieldCreator::CreateField( SIZE size){ //ÇÀ×ÅÌ ÌÛ ÂÎÇÂÐÀÙÀÅÌ FIELD*. ÑÒÎÈÒ ËÈ ÏÐÎÑÒÎ ÏÅÐÅÄÀÒÜ ÓÊÀÇÀÒÅËÜ 
+	Field* GrassFieldCreator::CreateField( SIZE size){ 
 		cout << "CreateField()" << endl;
 		 fieldEntitiesFactory = new GrassFieldEntitiesFactory();
 		field = new GrassField(size);
 		CreateCells();
 		Animal* a = fieldEntitiesFactory->createAnimal();
 		field->animal.push_back(a);
-		//return field;
+		return field;
 	}
 	
 	GrassFieldCreator::~GrassFieldCreator() {
@@ -41,7 +32,7 @@ using namespace std;
 		delete fieldEntitiesFactory;
 		cout << "GrassField destructor" << endl;
 	}
-	void GrassFieldCreator::CreateCells() { //ÑÄÅËÀÒÜ ÏÐÎÂÅÐÊÓ ÂÀËÈÄÍÎÑÒÈ!!!!!
+	void GrassFieldCreator::CreateCells() { 
 		cout << "CreateCells()" << endl;
 		field->cells = new Cell*[field->size];
 		for (int i = 0; i < field->size; i++)

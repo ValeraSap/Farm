@@ -4,14 +4,15 @@
 using namespace std;
 
 
-//ÄÓÑÒÐÓÊÒÎÐ ÄËß ß×ÅÅÊ
+
 
 int main()
 {
 	setlocale(LC_ALL, "Rus");
 
-//	Field* field;	
-	FieldCreator* fc = new GrassFieldCreator( SMALL);
+	Field* field;	
+	FieldCreator* fc = new GrassFieldCreator();
+	field = fc->CreateField(SMALL);
 	
 	system("pause");
 }

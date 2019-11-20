@@ -7,4 +7,5 @@ public:
 	Cell();
 	void setOblect(Entitiy* obj);
 	Entitiy* getOblect();
+	~Cell();
 };
