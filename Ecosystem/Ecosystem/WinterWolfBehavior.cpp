@@ -1,6 +1,7 @@
 #include "WinterWolfBehavior.h"
 
-
+//ÇÈÌÍÅÅ ÏÎÂÅÄÅÍÈÅ
+// *ÑÁÈÂÀŞÒÑß Â ÑÒÀŞ
 
 WinterWolfBehavior::WinterWolfBehavior()
 {
@@ -9,4 +10,13 @@ WinterWolfBehavior::WinterWolfBehavior()
 
 WinterWolfBehavior::~WinterWolfBehavior()
 {
+}
+
+void WinterWolfBehavior::Hunt(void)
+{
+	// TODO : implement
+}
+void WinterWolfBehavior::Idle(void)
+{
+	// TODO : implement
 }

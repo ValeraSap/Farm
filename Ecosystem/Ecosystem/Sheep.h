@@ -1,17 +1,16 @@
 #pragma once
 
-#include "Animal.h"
-
 /* Purpose: Declaration of the class Sheep */
 
 #if !defined(__FarmClassDiagram_Sheep_h)
 #define __FarmClassDiagram_Sheep_h
 
+#include "Animal.h"
 
 class Sheep : public Animal
 {
 public:
-	int Update(void);
+	void Update(void);
 	void Pregnancy(void);
 	Sheep();
 	virtual ~Sheep();

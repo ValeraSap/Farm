@@ -24,7 +24,7 @@ protected:
 private:
 	int partner;
 	int huntRole;
-	WolfPack pack;
+	WolfPack* pack;
 	StateWolf state;
 //	int reserves;
 	

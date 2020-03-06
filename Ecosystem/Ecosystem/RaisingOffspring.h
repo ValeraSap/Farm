@@ -6,5 +6,7 @@ class RaisingOffspring :
 public:
 	RaisingOffspring();
 	~RaisingOffspring();
+	void Hunt(void);
+	void Idle(void);
 };
 
