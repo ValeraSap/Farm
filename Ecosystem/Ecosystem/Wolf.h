@@ -8,7 +8,8 @@
 
 #include "Animal.h"
 #include "WolfPack.h"
-#include "StateWolf.h"
+#include "WinterWolfBehavior.h"
+#include "Reserve.h"
 
 class Wolf : public Animal
 {
@@ -17,16 +18,14 @@ public:
 	virtual ~Wolf();
 	void Update(void);
 
-//	Reserve** reserve;
-//	StateWolf** stateWolf;
+	//Reserve* reserve; Вектор или список!
 
 protected:
 private:
 	int partner;
 	int huntRole;
 	WolfPack* pack;
-	StateWolf state;
-//	int reserves;
+	StateWolf* state = new WinterWolfBehavior;  
 	
 };
 

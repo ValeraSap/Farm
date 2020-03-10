@@ -6,5 +6,7 @@ class SheepMatingBehaviorState :
 public:
 	SheepMatingBehaviorState();
 	~SheepMatingBehaviorState();
+	void Grazing(void);
+	void Idle(void);
 };
 

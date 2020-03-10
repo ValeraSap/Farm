@@ -6,5 +6,7 @@ class SickSheep :
 public:
 	SickSheep();
 	~SickSheep();
+	void Grazing(void);
+	void Idle(void);
 };
 

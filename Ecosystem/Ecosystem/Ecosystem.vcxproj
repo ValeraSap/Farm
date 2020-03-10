@@ -173,6 +173,7 @@
     <ClInclude Include="RaisingOffspring.h" />
     <ClInclude Include="Reserve.h" />
     <ClInclude Include="RoundUpHuntStrategy.h" />
+    <ClInclude Include="settings.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="SheepAlert.h" />
     <ClInclude Include="SheepFlock.h" />
