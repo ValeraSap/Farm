@@ -3,8 +3,8 @@
 #define __FarmClassDiagram_SickWolf_h
 
 #include "StateWolf.h"
-class SickWolf :
-	public StateWolf
+
+class SickWolf : public StateWolf
 {
 public:
 	SickWolf();

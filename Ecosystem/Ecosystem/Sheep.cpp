@@ -13,7 +13,7 @@ void Sheep::Pregnancy(void)
 }
 Sheep::Sheep()
 {
-	stateSheep = NULL;
+	stateSheep = nullptr;
 }
 Sheep::~Sheep()
 {

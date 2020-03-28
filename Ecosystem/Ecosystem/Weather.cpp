@@ -2,8 +2,9 @@
 
 
 
-Weather::Weather()
+Weather::Weather(Field* f)
 {
+	field = f;
 }
 
 

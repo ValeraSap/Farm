@@ -11,7 +11,7 @@ public:
 
 protected:
 private:
-	Wolf* wolf;
+	Wolf* wolf= nullptr;
 
 };
 

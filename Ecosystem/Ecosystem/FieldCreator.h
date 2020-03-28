@@ -9,6 +9,11 @@ public:
 	Field* CreateField(void);
 	FieldCreator();
 	virtual ~FieldCreator();
+protected:
+	void CreateCells(void);
+	void ClearCells(void);
+	void CreateFauna(void);
+	void CreateWeather(void);
 private:	
 	Field field;
 };

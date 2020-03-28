@@ -8,8 +8,13 @@
 
 #include "Animal.h"
 #include "WolfPack.h"
-#include "WinterWolfBehavior.h"
+
 #include "Reserve.h"
+
+#include "WinterWolfBehavior.h"
+#include "RaisingOffspring.h"
+#include "SickWolf.h"
+#include "WolfMatingBehaviorState.h"
 
 class Wolf : public Animal
 {
@@ -22,10 +27,10 @@ public:
 
 protected:
 private:
-	int partner;
+	Wolf* partner= nullptr;
 	int huntRole;
-	WolfPack* pack;
-	StateWolf* state = new WinterWolfBehavior;  
+	WolfPack* pack= nullptr;
+	StateWolf* state = nullptr;
 	
 };
 

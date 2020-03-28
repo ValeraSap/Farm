@@ -5,18 +5,13 @@
 #include "FieldCreator.h"
 #include "GrassField.h"
 
-class GrassFieldCreator :
-	public FieldCreator
+class GrassFieldCreator : public FieldCreator
 {
 public:
 	GrassFieldCreator();
 	~GrassFieldCreator();
 
 	Field* CreateField(void);
-	void CreateCells(void);
-	void ClearCells(void);	
-	void CreateFauna(void);
-	void CreateWeather(void);
 
 	GrassField** grassField;
 };

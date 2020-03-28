@@ -14,16 +14,16 @@ public:
 	WolfPack();
 	~WolfPack();
 
-	Wolf** wolf;
-	WolfHuntStrategy** wolfHuntStrategy;
+	Wolf** wolf= nullptr;
+	WolfHuntStrategy** wolfHuntStrategy= nullptr;
 
 protected:
 private:
-	Wolf alphaMale;
-	Wolf alphaFemale;
-	Wolf betas;
+	Wolf* alphaMale = nullptr;
+	Wolf* alphaFemale = nullptr;
+	Wolf* betas = nullptr;
 	int territory;
-	WolfHuntStrategy wolfHuntStrategy;
+	WolfHuntStrategy* wolfHuntStrategy= nullptr;
 
 
 };

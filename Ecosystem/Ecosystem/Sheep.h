@@ -6,6 +6,7 @@
 #define __FarmClassDiagram_Sheep_h
 
 #include "Animal.h"
+#include "StateSheep.h"
 
 class Sheep : public Animal
 {
@@ -20,7 +21,7 @@ public:
 protected:
 private:
 	int anxiety;
-	int stateSheep;
+	StateSheep* stateSheep=nullptr;
 	int flock;
 	int cell;
 

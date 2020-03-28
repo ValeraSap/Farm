@@ -1,5 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "Engine.h"
+
+
+
 using namespace sf;
 
 //доп информация по написанию Engine https://proglib.io/p/pervyy-igrovoy-dvizhok-na-s-i-sfml-2019-11-19
@@ -16,13 +19,15 @@ Engine::Engine()
 		"Simple Game Engine",
 		Style::Fullscreen);
 
+	field = GrassFieldCreator().CreateField();
 }
 
 void Engine::start()
 {
 	// Расчет времени
 	Clock clock;
-
+		
+	
 	while (m_Window.isOpen())
 	{
 		// Перезапускаем таймер и записываем отмеренное время в dt
@@ -43,34 +48,16 @@ void Engine::input()
 		m_Window.close();
 	}
 
-	// Обрабатываем нажатие клавиш движения
-	if (Keyboard::isKeyPressed(Keyboard::A))
-	{
-		
-	}
-	else
-	{
-		
-	}
-
-	if (Keyboard::isKeyPressed(Keyboard::D))
-	{
-		
-	}
-	else
-	{
-		
-	}
-
+	
 }
 void Engine::update(float dtAsSeconds)
 {
-	// mBob.Update();
+	field->Update();
 }
 void Engine::draw()
 {
 	// Стираем предыдущий кадр
 	m_Window.clear(Color::White);
-
+	//field->Draw();
 	m_Window.display();
 }

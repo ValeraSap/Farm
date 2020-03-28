@@ -2,7 +2,7 @@
 #if !defined(__FarmClassDiagram_Cell_h)
 #define __FarmClassDiagram_Cell_h
 
-#include "Animal.h"
+//#include "Animal.h"
 class Cell
 {
 public:
@@ -14,7 +14,7 @@ public:
 private:
 	int grassMass;
 	int CGI; //коэффициент привлекательности участка для травоядных
-	Animal herbivorous;
+	//Animal** herbivorous;
 };
 
 #endif

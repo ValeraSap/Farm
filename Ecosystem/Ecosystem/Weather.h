@@ -3,12 +3,14 @@
 #define __FarmClassDiagram_Weather_h
 #include "Field.h"
  class Weather //погода может быть только одна. Нужен singleon!
-{
+{	
+	 //Ссылка на поле
+	 Field* field= nullptr;
 public:
-	void Update(void);
-	Weather();
+	//void Update(void);
+	Weather(Field* f);
 	~Weather();
-	Field* field; //Ссылка на поле
+	 
 };
 #endif
 
