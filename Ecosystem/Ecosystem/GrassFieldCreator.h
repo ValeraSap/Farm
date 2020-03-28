@@ -7,12 +7,19 @@
 
 class GrassFieldCreator : public FieldCreator
 {
+	GrassField** grassField;
+	
 public:
+	
 	GrassFieldCreator();
 	~GrassFieldCreator();
 
-	Field* CreateField(void);
+	Field* ñreateField(void);
 
-	GrassField** grassField;
+	void ñreateCells(void);	
+	void ñreateFauna(void);
+	void ñreateWeather(void);
+	
+	
 };
 #endif

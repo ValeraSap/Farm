@@ -6,14 +6,13 @@
 class FieldCreator
 {
 public:
-	Field* CreateField(char type);
+	Field* createField(char type);
 	FieldCreator();
 	virtual ~FieldCreator();
-protected:
-	void CreateCells(void);
-	void ClearCells(void);
-	void CreateFauna(void);
-	void CreateWeather(void);
+//protected:
+	virtual void createCells(void)=0;
+	virtual void createFauna(void)=0;
+	virtual void createWeather(void)=0;
 private:	
 	Field field;
 };

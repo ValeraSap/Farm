@@ -15,9 +15,9 @@ Engine::Engine()
 	resolution.x = VideoMode::getDesktopMode().width;
 	resolution.y = VideoMode::getDesktopMode().height;
 
-	m_Window.create(VideoMode(resolution.x, resolution.y),
+	m_Window.create(VideoMode(1600, 972),
 		"Simple Game Engine",
-		Style::Fullscreen);
+		Style::Default);
 
 	field = GrassFieldCreator().CreateField();
 }
@@ -52,12 +52,15 @@ void Engine::input()
 }
 void Engine::update(float dtAsSeconds)
 {
-	field->Update();
+	field->update(dtAsSeconds);
 }
 void Engine::draw()
 {
 	// Стираем предыдущий кадр
-	m_Window.clear(Color::White);
-	//field->Draw();
+	m_Window.clear(Color::White);	
+
+	// Отрисовываем поле
+	m_Window.draw(field->getSprite());
+
 	m_Window.display();
 }

@@ -144,6 +144,9 @@
     <ClInclude Include="GrassFieldCreator.h" />
     <ClInclude Include="config.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\TexturesCom_Grass0198_M.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

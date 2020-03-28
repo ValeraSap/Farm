@@ -7,6 +7,10 @@ Field* FieldCreator::CreateField(char type)
 	switch (type){
 	default:
 		return new GrassField();
+		////методы создани€ деталей пол€ сделать абстрактными
+		////создавать экз пол€ (unique) 
+		////дл€ пол€ создать необходимый климат, животных
+		////передать указатель
 	}
 }
 
@@ -19,19 +23,3 @@ FieldCreator::~FieldCreator()
 {
 }
 
-void FieldCreator::CreateCells(void)
-{
-	// TODO : implement
-}
-void FieldCreator::ClearCells(void)
-{
-	// TODO : implement
-}
-void FieldCreator::CreateFauna(void)
-{
-	// TODO : implement
-}
-void FieldCreator::CreateWeather(void)
-{
-	// TODO : implement
-}
