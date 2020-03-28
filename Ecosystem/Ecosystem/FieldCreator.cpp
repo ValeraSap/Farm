@@ -1,8 +1,13 @@
 #include "FieldCreator.h"
 
-Field* FieldCreator::CreateField(void)
+#include "GrassField.h"
+
+Field* FieldCreator::CreateField(char type)
 {
-	// TODO : implement
+	switch (type){
+	default:
+		return new GrassField();
+	}
 }
 
 FieldCreator::FieldCreator()

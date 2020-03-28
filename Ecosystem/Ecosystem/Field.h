@@ -12,9 +12,10 @@ public:
 	void Update(void);
 	Field();
 	virtual ~Field();
-private:
+protected:
 	SIZE size;
-	Cell cells;
+
+//	Cell cells;
 //	Fauna fauna;
 //	Weather weather;
 

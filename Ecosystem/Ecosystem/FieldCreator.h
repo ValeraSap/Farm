@@ -6,7 +6,7 @@
 class FieldCreator
 {
 public:
-	Field* CreateField(void);
+	Field* CreateField(char type);
 	FieldCreator();
 	virtual ~FieldCreator();
 protected:
