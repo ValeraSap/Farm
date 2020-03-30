@@ -14,6 +14,8 @@ Field::Field()
 	// Устанавливаем начальную позицию Боба в пикселях
 	position.x = 300;
 	position.y = 300;
+
+	weather = Weather::getWeather();
 }
 Sprite Field::getSprite()
 {

@@ -5,7 +5,7 @@
 #include "FieldCreator.h"
 #include "GrassField.h"
 
-class GrassFieldCreator : public FieldCreator
+class GrassFieldCreator : public FieldCreator //singleton áû //âûíåñòè â îäèí ôàéë ê ğîäèòåëş??
 {
 	GrassField** grassField;
 	
@@ -14,11 +14,12 @@ public:
 	GrassFieldCreator();
 	~GrassFieldCreator();
 
-	Field* ñreateField(void);
+	virtual Field* createField(char type);
+protected:
 
-	void ñreateCells(void);	
-	void ñreateFauna(void);
-	void ñreateWeather(void);
+	void ñreateCells();	
+	void ñreateFauna();
+	void ñreateWeather();
 	
 	
 };

@@ -135,6 +135,7 @@
     <ClCompile Include="GrassField.cpp" />
     <ClCompile Include="GrassFieldCreator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Weather.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="GrassField.h" />
     <ClInclude Include="GrassFieldCreator.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="Weather.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\TexturesCom_Grass0198_M.jpg" />

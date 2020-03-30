@@ -10,19 +10,17 @@ GrassFieldCreator::GrassFieldCreator()
 GrassFieldCreator::~GrassFieldCreator()
 {
 }
-Field* GrassFieldCreator::createField(void)
-{
+
+
+Field* GrassFieldCreator::createField(char type) {
 	return new GrassField();
 }
-void GrassFieldCreator::createCells(void)
-{
-	// TODO : implement
+void GrassFieldCreator::ñreateWeather() {
+
 }
-void GrassFieldCreator::createFauna(void)
-{
-	// TODO : implement
+void GrassFieldCreator::ñreateCells() {
+
 }
-void GrassFieldCreator::createWeather(void)
-{
-	// TODO : implement
+void GrassFieldCreator::ñreateFauna() {
+
 }

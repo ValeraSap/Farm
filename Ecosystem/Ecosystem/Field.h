@@ -2,7 +2,7 @@
 #if !defined(__FarmClassDiagram_Field_h)
 #define __FarmClassDiagram_Field_h
 //#include "Cell.h"
-//#include "Weather.h"
+#include "Weather.h"
 #include "config.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
@@ -33,9 +33,9 @@ private:
 	// Добавляем текстуру
 	Texture texture;
 
-//	Cell cells;
-//	Fauna fauna;
-//	Weather weather;
+//	Cell* cells;
+//	Fauna* fauna;
+	Weather* weather;
 
 };
 

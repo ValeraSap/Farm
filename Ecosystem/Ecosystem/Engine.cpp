@@ -19,7 +19,8 @@ Engine::Engine()
 		"Simple Game Engine",
 		Style::Default);
 
-	field = GrassFieldCreator().CreateField();
+	//FieldCreator* fc = new GrassFieldCreator();
+	field = GrassFieldCreator().createField('g');          //'g'-grass field 
 }
 
 void Engine::start()
@@ -50,10 +51,12 @@ void Engine::input()
 
 	
 }
+
 void Engine::update(float dtAsSeconds)
 {
 	field->update(dtAsSeconds);
 }
+
 void Engine::draw()
 {
 	// Стираем предыдущий кадр

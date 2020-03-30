@@ -3,18 +3,21 @@
 #define __FarmClassDiagram_FieldCreator_h
 
 #include "Field.h"
-class FieldCreator
+class FieldCreator //singleton áû
 {
 public:
-	Field* createField(char type);
-	FieldCreator();
+	virtual Field* createField(char type)=0;
+	
 	virtual ~FieldCreator();
-//protected:
-	virtual void createCells(void)=0;
-	virtual void createFauna(void)=0;
-	virtual void createWeather(void)=0;
+protected:
+	virtual void ñreateCells()=0;
+	virtual void ñreateFauna()=0;
+	virtual void ñreateWeather()=0;
+
+	FieldCreator();
 private:	
-	Field field;
+	
+	//Field field;
 };
 
 #endif
