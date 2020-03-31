@@ -3,7 +3,7 @@
 #define __FarmClassDiagram_Field_h
 //#include "Cell.h"
 #include "Weather.h"
-#include "config.h"
+//#include "config.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -21,20 +21,18 @@ public:
 	void update(float elapsedTime);
 
 protected:
-	SIZE size;
 
-private:
+	//SIZE size;
+
 	//позиция
 	Vector2f position;
-
-	// Объявляем объект Sprite
+	
 	Sprite sprite;
-
-	// Добавляем текстуру
 	Texture texture;
 
-//	Cell* cells;
-//	Fauna* fauna;
+private:
+//	Cell** cells;
+//	Fauna** fauna;
 	Weather* weather;
 
 };

@@ -3,7 +3,7 @@
 #define __FarmClassDiagram_GrassField_h
 
 #include "Field.h"
-class GrassField :	public Field //Нужен singleon!
+class GrassField :	public Field //need singleon!
 {
 public:
 	GrassField();

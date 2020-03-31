@@ -4,3 +4,4 @@ enum SIZE {
 	medium = 25,
 	big = 50,
 };
+

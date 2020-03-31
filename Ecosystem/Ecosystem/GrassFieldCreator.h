@@ -14,12 +14,8 @@ public:
 	GrassFieldCreator();
 	~GrassFieldCreator();
 
-	virtual Field* createField(char type);
-protected:
+	virtual Field* createField();
 
-	void ñreateCells();	
-	void ñreateFauna();
-	void ñreateWeather();
 	
 	
 };

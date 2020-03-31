@@ -1,16 +1,16 @@
-#include <SFML/Graphics.hpp>
+ï»¿#include <SFML/Graphics.hpp>
 #include "Engine.h"
 
 
 
 using namespace sf;
 
-//äîï èíôîðìàöèÿ ïî íàïèñàíèþ Engine https://proglib.io/p/pervyy-igrovoy-dvizhok-na-s-i-sfml-2019-11-19
+//Ã¤Ã®Ã¯ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿ Ã¯Ã® Ã­Ã Ã¯Ã¨Ã±Ã Ã­Ã¨Ã¾ Engine https://proglib.io/p/pervyy-igrovoy-dvizhok-na-s-i-sfml-2019-11-19
 
 Engine::Engine()
 {
 
-	// Ïîëó÷àåì ðàçðåøåíèå ýêðàíà, ñîçäàåì îêíî SFML è View
+	// ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ ÑÐºÑ€Ð°Ð½Ð°, ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ Ð¾ÐºÐ½Ð¾ SFML Ð¸ View
 	Vector2f resolution;
 	resolution.x = VideoMode::getDesktopMode().width;
 	resolution.y = VideoMode::getDesktopMode().height;
@@ -20,18 +20,18 @@ Engine::Engine()
 		Style::Default);
 
 	//FieldCreator* fc = new GrassFieldCreator();
-	field = GrassFieldCreator().createField('g');          //'g'-grass field 
+	field = GrassFieldCreator().createField();          
 }
 
 void Engine::start()
 {
-	// Ðàñ÷åò âðåìåíè
+	// Ð Ð°ÑÑ‡ÐµÑ‚ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
 	Clock clock;
 		
 	
 	while (m_Window.isOpen())
 	{
-		// Ïåðåçàïóñêàåì òàéìåð è çàïèñûâàåì îòìåðåííîå âðåìÿ â dt
+		// ÐŸÐµÑ€ÐµÐ·Ð°Ð¿ÑƒÑÐºÐ°ÐµÐ¼ Ñ‚Ð°Ð¹Ð¼ÐµÑ€ Ð¸ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ð¾Ñ‚Ð¼ÐµÑ€ÐµÐ½Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ð² dt
 		Time dt = clock.restart();
 
 		float dtAsSeconds = dt.asSeconds();
@@ -43,7 +43,7 @@ void Engine::start()
 }
 void Engine::input()
 {
-	// Îáðàáàòûâàåì íàæàòèå Escape
+	// ÃŽÃ¡Ã°Ã Ã¡Ã Ã²Ã»Ã¢Ã Ã¥Ã¬ Ã­Ã Ã¦Ã Ã²Ã¨Ã¥ Escape
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		m_Window.close();
@@ -59,11 +59,12 @@ void Engine::update(float dtAsSeconds)
 
 void Engine::draw()
 {
-	// Ñòèðàåì ïðåäûäóùèé êàäð
+	// Ã‘Ã²Ã¨Ã°Ã Ã¥Ã¬ Ã¯Ã°Ã¥Ã¤Ã»Ã¤Ã³Ã¹Ã¨Ã© ÃªÃ Ã¤Ã°
 	m_Window.clear(Color::White);	
 
-	// Îòðèñîâûâàåì ïîëå
+	// Drawing field
 	m_Window.draw(field->getSprite());
+	//Need organize drawing other entities!
 
 	m_Window.display();
 }

@@ -1,21 +1,20 @@
-#include "Field.h"
+п»ї#include "Field.h"
 
 void Field::update(float dtAsSeconds)
 {
-	// TODO : implement
+	weather->update(dtAsSeconds);
+	//cell->upd()
+	//fauna->upd()
 }
 
 Field::Field()
 {
-	// Связываем текстуру и спрайт
-	texture.loadFromFile("Textures/GField.jpg");
-	sprite.setTexture(texture);
-
-	// Устанавливаем начальную позицию Боба в пикселях
+	// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РЅР°С‡Р°Р»СЊРЅСѓСЋ РїРѕР·РёС†РёСЋ  //РІРёРґРёРјРѕ РїРѕР·РёС†РёРё С‚РµРєСЃС‚СѓСЂС‹
 	position.x = 300;
 	position.y = 300;
 
-	weather = Weather::getWeather();
+	//creating weather. Here 'cause it's inappropriate to do in grassfield & also for doing it in field creator'e we need it to be friend class to field
+	weather = Weather::getWeather(); 
 }
 Sprite Field::getSprite()
 {
