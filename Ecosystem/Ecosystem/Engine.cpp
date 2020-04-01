@@ -15,7 +15,7 @@ Engine::Engine()
 	resolution.x = VideoMode::getDesktopMode().width;
 	resolution.y = VideoMode::getDesktopMode().height;
 
-	m_Window.create(VideoMode(1600, 972),
+	renderWindow.create(VideoMode(1600, 972),
 		"Simple Game Engine",
 		Style::Default);
 
@@ -29,10 +29,11 @@ void Engine::start()
 	Clock clock;
 		
 	
-	while (m_Window.isOpen())
+	while (renderWindow.isOpen())
 	{
 		// Перезапускаем таймер и записываем отмеренное время в dt
 		Time dt = clock.restart();
+		
 
 		float dtAsSeconds = dt.asSeconds();
 
@@ -42,11 +43,10 @@ void Engine::start()
 	}
 }
 void Engine::input()
-{
-	// Îáðàáàòûâàåì íàæàòèå Escape
+{	
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
-		m_Window.close();
+		renderWindow.close();
 	}
 
 	
@@ -59,12 +59,10 @@ void Engine::update(float dtAsSeconds)
 
 void Engine::draw()
 {
-	// Ñòèðàåì ïðåäûäóùèé êàäð
-	m_Window.clear(Color::White);	
+	renderWindow.clear(Color::White);	
 
 	// Drawing field
-	m_Window.draw(field->getSprite());
-	//Need organize drawing other entities!
+	field->draw(&renderWindow);	
 
-	m_Window.display();
+	renderWindow.display();
 }

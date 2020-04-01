@@ -20,13 +20,12 @@ public:
 	// Эта функция будет вызываться на каждый кадр
 	void update(float elapsedTime);
 
+	void draw(RenderWindow* renderWindow);
+
 protected:
-
-	//SIZE size;
-
-	//позиция
-	Vector2f position;
 	
+	//texture pos
+	Vector2f position;	
 	Sprite sprite;
 	Texture texture;
 

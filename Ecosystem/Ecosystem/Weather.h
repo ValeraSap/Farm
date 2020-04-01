@@ -14,8 +14,8 @@ public:
 	
 	//creates or returns singleton
 	static Weather* getWeather();
-
-	Sprite getSprite();
+	
+	void draw(RenderWindow* renderWindow);
 
 /*---------------Access attention----------------
 -------------------------------------------------
@@ -30,16 +30,18 @@ public:
 	 enum WIND{no_wind, ost, nord, west, east} wind;
 
 	 ~Weather();
-protected:
-	//Weather(Field* f);
+protected:	
 	Weather();
 private:
 	
 	static Weather* _instance; //contain singleton
 
-	Sprite sprite;
 	Texture texture;
+	Sprite sprite;	
+	IntRect rectangle;
 	Animator* animator;
+
+	int frameWidth;
 	
 };
 #endif

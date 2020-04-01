@@ -14,7 +14,7 @@ public:
 	Animator(Texture texture, int frameCount);
 	~Animator();
 
-	void leftAnimation();
+	int leftAnimation(float time);
 	void rightAnimation();
 };
 

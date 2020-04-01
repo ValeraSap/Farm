@@ -9,7 +9,7 @@ class Engine
 {
 private:
 
-	RenderWindow m_Window;
+	RenderWindow renderWindow;
 
 	// ќбъ€вл€ем спрайт и текстуру дл€ фона
 	//Sprite m_BackgroundSprite;
