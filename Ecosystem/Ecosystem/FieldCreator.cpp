@@ -13,12 +13,3 @@ FieldCreator::~FieldCreator()
 }
 
 
-/*void FieldCreator::createCells() {
-
-}
-void FieldCreator::createFauna() {
-
-}
-void FieldCreator::createWeather() {
-
-}*/

@@ -13,6 +13,7 @@ GrassFieldCreator::~GrassFieldCreator()
 
 
 Field* GrassFieldCreator::createField() {
+
 	//Field* f = new GrassField();
 	//f.weather=createWeather();
 

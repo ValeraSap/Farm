@@ -1,48 +1,48 @@
 ﻿#include "Weather.h"
 
-
+#include <ctime>
+#include <iostream>
 
 Weather::Weather() {
 
-	texture.loadFromFile("Textures/rain.png");
-	sprite.setTexture(texture);
-	frameWidth = texture.getSize().x;
-
-	rectangle = IntRect(0, 0, frameWidth/4, texture.getSize().y);
-	sprite.setTextureRect(rectangle); //кусок текстуры
-	sprite.setPosition(250, 250); //расположение на экране
+	texture.loadFromFile("Textures/rain_drop.png");
+	sprite.setTexture(texture);	
+	sprite.setScale(0.15, 0.15);
+	sprite.setPosition(0,0); //расположение на экране //0,0 - left up corner
 
 	rain = false;
 	wind = no_wind;
+	season = summer;
 
-	animator = new Animator(texture, 4);
-
-
+	std::srand(time(0));
 }
 Weather::~Weather()
 {
 	//_instance is static. does it mean we don't need to call function delete for it
 }
-Weather* Weather::_instance = 0;
+Weather* Weather::instance = 0;
 
 Weather* Weather::getWeather() {
-	if (_instance == 0)
-		_instance = new Weather();
-	return _instance;
+	if (instance == 0)
+		instance = new Weather();
+	return instance;
 }
-
 
 
 void Weather::update(float elapsedTime) {
-	if (rain) {
-		//need time limitation : CurrentFrame += 0.005*time;
-		rectangle.left = animator->leftAnimation(elapsedTime) * frameWidth;
-			sprite.setTextureRect(rectangle);
-		
-		
+	
+	
+	//Need precipitation coefficient for every season to implement rain probability	
+	if (season == summer) {
+		if (rand() % 10 > 6)
+			rain = true;
+		else rain = false;
 	}
 }
 void Weather::draw(RenderWindow* renderWindow) {
-	
-	renderWindow->draw(sprite);
+
+	if (rain) {
+		renderWindow->draw(sprite);
+	}
+		
 }

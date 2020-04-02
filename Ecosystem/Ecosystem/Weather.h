@@ -27,21 +27,21 @@ public:
 ---inside----------------------------------------
 -----------------------------------------------*/
 	 bool rain;																			//make this variables static leads to link errors. why?
-	 enum WIND{no_wind, ost, nord, west, east} wind;
+	 enum Wind{no_wind, ost, nord, west, east} wind;
+
+	 enum Seasons{summer, autumn, winter, spring} season;   //how to implement cycle? => need iterator/structure?
 
 	 ~Weather();
 protected:	
 	Weather();
 private:
 	
-	static Weather* _instance; //contain singleton
+	static Weather* instance; //contain singleton
 
 	Texture texture;
 	Sprite sprite;	
-	IntRect rectangle;
-	Animator* animator;
-
-	int frameWidth;
+	IntRect rectangle;	
+	
 	
 };
 #endif
