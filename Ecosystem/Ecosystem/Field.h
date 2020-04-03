@@ -18,7 +18,7 @@ public:
 	Sprite getSprite();
 		
 	// Эта функция будет вызываться на каждый кадр
-	void update(float elapsedTime);
+	void update(float elapsed);
 
 	void draw(RenderWindow* renderWindow);
 
@@ -34,6 +34,10 @@ private:
 //	Fauna** fauna;
 	Weather* weather;
 
+	//we need global time counter
+	static double timer;
+
+	//TODO Time!
 };
 
 #endif

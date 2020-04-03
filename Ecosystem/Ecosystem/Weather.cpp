@@ -29,14 +29,17 @@ Weather* Weather::getWeather() {
 }
 
 
-void Weather::update(float elapsedTime) {
+void Weather::update(float elapsed) {
 	
 	
 	//Need precipitation coefficient for every season to implement rain probability	
 	if (season == summer) {
-		if (rand() % 10 > 6)
+		if (rand() % 10 > 6) {
 			rain = true;
-		else rain = false;
+			//std::cout << "rain\t";
+		}			
+		else //std::cout << "no rain\t";
+			rain = false; 
 	}
 }
 void Weather::draw(RenderWindow* renderWindow) {

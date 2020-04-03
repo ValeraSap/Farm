@@ -28,18 +28,20 @@ void Engine::start()
 	// Расчет времени
 	Clock clock;
 		
+	//double lastTime=clock.
 	
 	while (renderWindow.isOpen())
 	{
 		// Перезапускаем таймер и записываем отмеренное время в dt
-		Time dt = clock.restart();
-		
+		Time dt = clock.restart();	 //dt contain how much time elapsed since the clock was started
+		float elapsed = dt.asSeconds(); //время кадра в секундах в переменную 
 
-		float dtAsSeconds = dt.asSeconds();
 
 		input();
-		update(dtAsSeconds);
+		update(elapsed);
 		draw();
+
+
 	}
 }
 void Engine::input()
