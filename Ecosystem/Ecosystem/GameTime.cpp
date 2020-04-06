@@ -42,16 +42,15 @@ void GameTime::update(float elapsed) {
 void GameTime::draw(RenderWindow* renderWindow) {
 
 	renderWindow->draw(text);
-
 }
 
-int  GameTime::getCurrentDay() {
+int  GameTime::getCurrentDay() const {
 	return currentDay;
 }
-int  GameTime::getCurrentHour() {
+int  GameTime::getCurrentHour() const {
 	return currentHour;
 }
-int  GameTime::getCurrentMinute() {
+int  GameTime::getCurrentMinute() const {
 	return currentMinute;
 }
 

@@ -2,6 +2,8 @@
 #if !defined(__FarmClassDiagram_Weather_h)
 #define __FarmClassDiagram_Weather_h
 
+#include "config.h"
+
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -9,15 +11,22 @@ using namespace sf;
 {	
 	 
 public:
-	enum Rain { no_rains, rains };
-
-	enum Wind { no_wind, ost, nord, west, east };	
+	
 		
+	/*Weather contains seasons and daytime? 
+	*Because  weather can be synonym for climate=>
+	*=> weather can be extended and implemented by many climate types
+	* Day time in its turn depends on seasons
+	*/
+	   //how to implement cycle? => need iterator/structure?
+
+	
+		Seasons currentSeason;	
 	
 	//creates or returns singleton
 	static Weather* Instance();
 
-	void update(float elapsedTime);
+	void update(int day, int hour);
 	void draw(RenderWindow* renderWindow);	
 
 	 ~Weather();

@@ -18,7 +18,7 @@ void GrassField::update(float elapsed)
 {
 	gametime.update(elapsed);
 	if(gametime.getCurrentHour()==7 || gametime.getCurrentHour() == 21) //weather changes at  7 a.m and 9 p.m
-		weather->update(elapsed);
+		weather->update(gametime.getCurrentDay(),gametime.getCurrentHour());
 
 	//cell->upd()
 	//fauna->upd()

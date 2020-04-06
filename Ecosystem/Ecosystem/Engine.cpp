@@ -1,11 +1,11 @@
 ﻿#include <SFML/Graphics.hpp>
 #include "Engine.h"
-
-
-
+#include "config.h"
+#include <iostream>
 using namespace sf;
 
 //äîï èíôîðìàöèÿ ïî íàïèñàíèþ Engine https://proglib.io/p/pervyy-igrovoy-dvizhok-na-s-i-sfml-2019-11-19
+
 
 Engine::Engine()
 {
@@ -27,17 +27,25 @@ void Engine::start()
 {
 	// Расчет времени
 	Clock clock;
-		
-	//double lastTime=clock.
+	double lag = 0.0;
+	
 	
 	while (renderWindow.isOpen())
 	{
 		// Перезапускаем таймер и записываем отмеренное время в dt
 		Time dt = clock.restart();	 //dt contain how much time elapsed since the clock was started
 		float elapsed = dt.asSeconds(); //время кадра в секундах в переменную 
+		lag += elapsed;
 
+		//std::cout << dt.asMicroseconds() << std::endl;
 
 		input();
+
+		while (lag >= MS_PER_UPDATE) { 
+			update(elapsed);
+			lag -= MS_PER_UPDATE;
+		}
+
 		update(elapsed);
 		draw();
 

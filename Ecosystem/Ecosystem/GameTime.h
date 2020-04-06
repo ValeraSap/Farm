@@ -10,9 +10,9 @@ public:
 	void update(float elapsedTime);
 	void draw(RenderWindow* renderWindow);
 
-	int getCurrentDay();
-	int getCurrentHour();
-	int getCurrentMinute();
+	int getCurrentDay() const;
+	int getCurrentHour() const;
+	int getCurrentMinute() const;
 	
 private:
 	int currentDay;  //Should they be static?

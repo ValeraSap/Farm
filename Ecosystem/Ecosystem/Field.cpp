@@ -6,7 +6,7 @@ Field::Field()
 	
 }
 
-Sprite Field::getSprite()
+Sprite Field::getSprite() const
 {
 	return sprite;
 }

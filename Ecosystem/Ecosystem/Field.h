@@ -12,12 +12,8 @@ public:
 	
 	Field();
 	virtual ~Field();
-
-	enum Seasons { summer, autumn, winter, spring };   //how to implement cycle? => need iterator/structure?
-	enum DayTime { day, night };
-
 	
-	Sprite getSprite();		
+	Sprite getSprite() const;		
 
 	virtual void update(float elapsed)=0;
 	virtual void draw(RenderWindow* renderWindow)=0;
