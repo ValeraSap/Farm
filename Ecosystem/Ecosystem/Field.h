@@ -1,43 +1,35 @@
-#pragma once
+ï»¿#pragma once
 #if !defined(__FarmClassDiagram_Field_h)
 #define __FarmClassDiagram_Field_h
-//#include "Cell.h"
-#include "Weather.h"
-//#include "config.h"
+
 #include <SFML/Graphics.hpp>
+#include "GameTime.h"
 using namespace sf;
 
-class Field
-{
+class Field  // Ð½ÑƒÐ¶ÐµÐ½ Ð´Ð»Ñ Ñ‚Ð¾Ð³Ð¾, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²ÑÐµ Ð¿Ð¾Ð»Ñ Ð¸Ð¼ÐµÐ»Ð¸ Ð¾Ð±Ñ‰Ð¸Ð¹ Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ
+{ 
 public:
 	
 	Field();
 	virtual ~Field();
 
-	// Äëÿ îòïðàâêè ñïðàéòà â ãëàâíóþ ôóíêöèþ
-	Sprite getSprite();
-		
-	// Ýòà ôóíêöèÿ áóäåò âûçûâàòüñÿ íà êàæäûé êàäð
-	void update(float elapsed);
+	enum Seasons { summer, autumn, winter, spring };   //how to implement cycle? => need iterator/structure?
+	enum DayTime { day, night };
 
-	void draw(RenderWindow* renderWindow);
+	
+	Sprite getSprite();		
+
+	virtual void update(float elapsed)=0;
+	virtual void draw(RenderWindow* renderWindow)=0;
 
 protected:
 	
-	//texture pos
 	Vector2f position;	
 	Sprite sprite;
-	Texture texture;
-
-private:
-//	Cell** cells;
-//	Fauna** fauna;
-	Weather* weather;
-
-	//we need global time counter
-	static double timer;
-
-	//TODO Time!
+	Texture texture;	
+	GameTime gametime;
+	
+	
 };
 
 #endif

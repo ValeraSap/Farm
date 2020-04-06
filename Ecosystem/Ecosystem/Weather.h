@@ -1,7 +1,7 @@
 #pragma once
 #if !defined(__FarmClassDiagram_Weather_h)
 #define __FarmClassDiagram_Weather_h
-#include "Animator.h"
+
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -9,40 +9,32 @@ using namespace sf;
 {	
 	 
 public:
+	enum Rain { no_rains, rains };
 
-	void update(float elapsedTime);	
+	enum Wind { no_wind, ost, nord, west, east };	
+		
 	
 	//creates or returns singleton
-	static Weather* getWeather();
-	
-	void draw(RenderWindow* renderWindow);
+	static Weather* Instance();
 
-/*---------------Access attention----------------
--------------------------------------------------
----in this point may appear some problems with---
----possibility to change variables states from---
----the outside of the class. Using getters and --
----setters isn't comfortable. Making them const--
----will destroy ability to chancge them from the-
----inside----------------------------------------
------------------------------------------------*/
-	 bool rain;																			//make this variables static leads to link errors. why?
-	 enum Wind{no_wind, ost, nord, west, east} wind;
-
-	 enum Seasons{summer, autumn, winter, spring} season;   //how to implement cycle? => need iterator/structure?
+	void update(float elapsedTime);
+	void draw(RenderWindow* renderWindow);	
 
 	 ~Weather();
 protected:	
 	Weather();
 private:
 	
-	static Weather* instance; //contain singleton
+	static Weather* instance; //contain singleton	
 
 	Texture texture;
 	Sprite sprite;	
 	IntRect rectangle;	
+
+	Rain rain;
+	Wind wind;	
 	
-	
+	//void (*weatherChangedCallback)(); 
 };
 #endif
 

@@ -133,6 +133,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldCreator.cpp" />
+    <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="GrassField.cpp" />
     <ClCompile Include="GrassFieldCreator.cpp" />
     <ClCompile Include="main.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FieldCreator.h" />
+    <ClInclude Include="GameTime.h" />
     <ClInclude Include="GrassField.h" />
     <ClInclude Include="GrassFieldCreator.h" />
     <ClInclude Include="config.h" />

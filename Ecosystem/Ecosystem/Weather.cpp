@@ -10,36 +10,30 @@ Weather::Weather() {
 	sprite.setScale(0.15, 0.15);
 	sprite.setPosition(0,0); //расположение на экране //0,0 - left up corner
 
-	rain = false;
-	wind = no_wind;
-	season = summer;
+	rain = no_rains;
+	wind = no_wind;	
 
 	std::srand(time(0));
 }
-Weather::~Weather()
-{
-	//_instance is static. does it mean we don't need to call function delete for it
-}
+
 Weather* Weather::instance = 0;
 
-Weather* Weather::getWeather() {
+Weather* Weather::Instance() {
 	if (instance == 0)
 		instance = new Weather();
 	return instance;
 }
 
+void Weather::update(float elapsed) {	
 
-void Weather::update(float elapsed) {
+	//TODO class that count time and seasons!!
+	//TODO precipitation coefficient for every season to implement rain probability
 	
-	
-	//Need precipitation coefficient for every season to implement rain probability	
-	if (season == summer) {
-		if (rand() % 10 > 6) {
-			rain = true;
-			//std::cout << "rain\t";
-		}			
-		else //std::cout << "no rain\t";
-			rain = false; 
+	if (rand() % 10 > 6) {
+		rain = rains;
+	}
+	else {
+		rain = no_rains;
 	}
 }
 void Weather::draw(RenderWindow* renderWindow) {
@@ -48,4 +42,8 @@ void Weather::draw(RenderWindow* renderWindow) {
 		renderWindow->draw(sprite);
 	}
 		
+}
+Weather::~Weather()
+{
+	//_instance is static. does it mean we don't need to call function delete for it
 }
