@@ -18,7 +18,7 @@ Animator::~Animator()
 
 int Animator::leftAnimation(float time) {
 	//XXX    limitation doesn't work!
-	currentFrame += 0.005 * time;
+	//currentFrame += 0.005 * time;
 	if (currentFrame >= (frameCount / 2 ) && currentFrame < frameCount-1) {     //bigger than first elem after middle && less than last
 		currentFrame++;
 	}

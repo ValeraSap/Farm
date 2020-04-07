@@ -19,6 +19,9 @@ Engine::Engine()
 		"Simple Game Engine",
 		Style::Default);
 
+	view.reset(sf::FloatRect(0, 0, renderWindow.getSize().x,
+		renderWindow.getSize().y));
+
 	//FieldCreator* fc = new GrassFieldCreator();
 	field = GrassFieldCreator().createField();          
 }
@@ -58,20 +61,29 @@ void Engine::input()
 	{
 		renderWindow.close();
 	}
-
+	if (Keyboard::isKeyPressed(Keyboard::D)) {
+		view.move(1.f, 0);
+	}
+	if (Keyboard::isKeyPressed(Keyboard::A)) {
+		view.move(-1.f, 0);
+	}
 	
 }
 
-void Engine::update(float dtAsSeconds)
+void Engine::update(float elapsed)
 {
-	field->update(dtAsSeconds);
+	field->update(elapsed);
+	userInterface.update(elapsed);
 }
 
 void Engine::draw()
 {
 	renderWindow.clear(Color::White);	
 
-	// Drawing field
+	userInterface.draw(&renderWindow);
+
+	renderWindow.setView(view);
+	
 	field->draw(&renderWindow);	
 
 	renderWindow.display();

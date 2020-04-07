@@ -137,6 +137,7 @@
     <ClCompile Include="GrassField.cpp" />
     <ClCompile Include="GrassFieldCreator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weather.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="GrassField.h" />
     <ClInclude Include="GrassFieldCreator.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="Weather.h" />
   </ItemGroup>
   <ItemGroup>

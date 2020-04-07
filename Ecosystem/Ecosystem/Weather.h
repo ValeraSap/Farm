@@ -19,7 +19,6 @@ public:
 	* Day time in its turn depends on seasons
 	*/
 	   //how to implement cycle? => need iterator/structure?
-
 	
 		Seasons currentSeason;	
 	

@@ -12,12 +12,18 @@ GameTime::GameTime(): currentDay(0), currentHour(0), currentMinute(0), timer(0)
 		std::cerr << "error loading font";
 	}
 	text.setFont(font);	
-
-	//std::string str = std::to_string(currentHour);
+	
 	text.setString(std::to_string(currentHour)+':'+ std::to_string(currentMinute));
 	text.setCharacterSize(45);
 	text.setFillColor(Color());
 	text.setPosition(5, 0);
+}
+
+GameTime* GameTime::instance = 0;
+GameTime* GameTime::Instatce() {
+	if (instance == 0)
+		instance = new GameTime();
+	return instance;
 }
 
 void GameTime::update(float elapsed) {

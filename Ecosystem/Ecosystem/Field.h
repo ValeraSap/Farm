@@ -19,11 +19,10 @@ public:
 	virtual void draw(RenderWindow* renderWindow)=0;
 
 protected:
-	
-	Vector2f position;	
+
 	Sprite sprite;
 	Texture texture;	
-	GameTime gametime;
+	GameTime* gametime;
 	
 	
 };

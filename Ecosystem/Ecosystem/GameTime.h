@@ -4,7 +4,7 @@ using namespace sf;
 
 class GameTime {
 public:
-	GameTime();
+	static GameTime* Instatce();
 	~GameTime();
 
 	void update(float elapsedTime);
@@ -15,6 +15,9 @@ public:
 	int getCurrentMinute() const;
 	
 private:
+	GameTime();
+	static GameTime* instance;
+
 	int currentDay;  //Should they be static?
 	int currentHour;
 	int currentMinute;

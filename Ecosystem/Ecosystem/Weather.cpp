@@ -4,12 +4,7 @@
 #include <iostream>
 
 Weather::Weather() {
-
-	texture.loadFromFile("Textures/rain_drop.png");
-	sprite.setTexture(texture);	
-	sprite.setScale(0.15, 0.15);
-	sprite.setPosition(0,0); //расположение на экране //0,0 - left up corner
-
+	
 	rain = NO_RAINS;
 	wind = NO_WIND;	
 
@@ -53,9 +48,7 @@ void Weather::update(int day, int hour) {
 }
 void Weather::draw(RenderWindow* renderWindow) {
 
-	if (rain) {
-		renderWindow->draw(sprite);
-	}
+	//TODO анимация дождя, если она однажды будет
 		
 }
 

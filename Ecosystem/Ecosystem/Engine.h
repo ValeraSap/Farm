@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "GrassField.h"
 #include "GrassFieldCreator.h"
+#include "UI.h"
 
 using namespace sf;
 
@@ -10,22 +11,20 @@ class Engine
 private:
 
 	RenderWindow renderWindow;
-
-	// Объявляем спрайт и текстуру для фона
-	//Sprite m_BackgroundSprite;
-	//Texture m_BackgroundTexture;
+	View view;
+	
 
 	Field* field;
+	UI userInterface;
 
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
 
 public:
-	// Конструктор движка
+	
 	Engine();
-
-	// Функция старт вызовет все приватные функции
+	
 	void start();
 
 };
