@@ -7,16 +7,7 @@
 
 GameTime::GameTime(): currentDay(0), currentHour(0), currentMinute(0), timer(0)
 {
-	if (!font.loadFromFile("Fonts/timefont.ttf"))
-	{
-		std::cerr << "error loading font";
-	}
-	text.setFont(font);	
 	
-	text.setString(std::to_string(currentHour)+':'+ std::to_string(currentMinute));
-	text.setCharacterSize(45);
-	text.setFillColor(Color());
-	text.setPosition(5, 0);
 }
 
 GameTime* GameTime::instance = 0;
@@ -42,12 +33,11 @@ void GameTime::update(float elapsed) {
 		currentDay++;
 		currentHour = 0;
 	}
-	text.setString(std::to_string(currentHour) + ':' + std::to_string(currentMinute));
-
+	
 }
 void GameTime::draw(RenderWindow* renderWindow) {
 
-	renderWindow->draw(text);
+	//
 }
 
 int  GameTime::getCurrentDay() const {

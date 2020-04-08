@@ -20,12 +20,15 @@ public:
 
 private:
 	Texture menuFrameTexture, pauseButtonTexture, windRoseTexture, rainTexture;
-	Sprite menurame, pauseButton, windRose, rainDrops;
+	Sprite menuFrame, pauseButton, windRose, rainNotifier;
 	
 	Rain rain;
 	Wind wind;
 
 	GameTime* gametime;
+
+	Text timer;
+	Font font;
 	
 };
 

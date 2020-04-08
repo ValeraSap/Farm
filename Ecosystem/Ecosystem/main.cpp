@@ -1,9 +1,7 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include "Engine.h"
 
 using namespace sf;
-
-
 
 
 int main()
@@ -16,3 +14,10 @@ int main()
 	return 0;
 }
 
+
+/*
+*1)Отображение GUI
+*2)Придумать реализацию Cell
+*3)Ввести размеры поля
+*4)Анимация 
+*/

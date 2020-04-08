@@ -23,6 +23,5 @@ private:
 	int currentMinute;
 	float timer;
 
-	Text text;
-	Font font;
+	
 };
