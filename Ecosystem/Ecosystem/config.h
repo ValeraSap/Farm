@@ -9,4 +9,4 @@ enum Wind { NO_WIND, NORTH, NORTH_EAST, EAST, EAST_SOUTH, SOUTH, SOUTH_WEST, WES
 
 enum Seasons { SUMMER, AUTUMN, WINTER, SPRING };
 
-enum DayTime { DAY, NIGHT };
+enum TimeOfDay { DAY, NIGHT };

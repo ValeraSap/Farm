@@ -8,7 +8,7 @@ using namespace sf;
 *UI будет отрисовывать пользователю текущее положение вещей: время, погоду и пр
 */
 
-class UI
+class UI 
 {
 public:
 
