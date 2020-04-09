@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameTime.h"
 #include "config.h"
+
 using namespace sf;
 
 /*
@@ -22,8 +23,7 @@ private:
 	Texture menuFrameTexture, pauseButtonTexture, windRoseTexture, rainTexture;
 	Sprite menuFrame, pauseButton, windRose, rainNotifier;
 	
-	Rain rain;
-	Wind wind;
+	
 
 	GameTime* gametime;
 

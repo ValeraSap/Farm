@@ -80,11 +80,12 @@ void Engine::draw()
 {
 	renderWindow.clear(Color::White);	
 
-	userInterface.draw(&renderWindow);
-
 	renderWindow.setView(view);
+	field->draw(&renderWindow);
+
+	userInterface.draw(&renderWindow);	
 	
-	field->draw(&renderWindow);	
+	
 
 	renderWindow.display();
 }

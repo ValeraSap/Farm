@@ -46,6 +46,7 @@ void Weather::update(int day, int hour) {
 
 	}*/
 }
+
 void Weather::draw(RenderWindow* renderWindow) {
 
 	//TODO анимация дождя, если она однажды будет

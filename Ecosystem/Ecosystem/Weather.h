@@ -28,6 +28,8 @@ public:
 	void update(int day, int hour);
 	void draw(RenderWindow* renderWindow);	
 
+	
+
 	 ~Weather();
 protected:	
 	Weather();
@@ -42,7 +44,7 @@ private:
 	Rain rain;
 	Wind wind;	
 	
-	//void (*weatherChangedCallback)(); 
+	
 };
 #endif
 
