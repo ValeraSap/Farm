@@ -2,6 +2,10 @@
 #include <iostream>
 #include <string>
 
+
+//https://kychka-pc.ru/sfml/urok-31-sfml-c-sozdanie-menyu.html
+
+
 UI::UI()
 {
 	menuFrameTexture.loadFromFile("Textures/GUI/menu-panel.png");			//Текстуры
@@ -69,9 +73,13 @@ UI::UI()
 
 
 }
+void UI::weatherChanged(Seasons s, Rain r, Wind w, TimeOfDay t) {
+
+	//TODO declare rain. season, etc variables 
+}
 
 void UI::update(float elapsed) {
-	gametime->update(elapsed);
+	//gametime->update(elapsed);
 	timer.setString(std::to_string(gametime->getCurrentHour()) 
 		+ ':' + std::to_string(gametime->getCurrentMinute()));
 

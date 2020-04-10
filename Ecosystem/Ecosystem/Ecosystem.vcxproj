@@ -151,6 +151,7 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weather.h" />
+    <ClInclude Include="IWeatherObserver.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\TexturesCom_Grass0198_M.jpg" />

@@ -15,10 +15,9 @@ GrassField::GrassField()
 
 }
 void GrassField::update(float elapsed)
-{
-	
-	if(gametime->getCurrentHour()==7 || gametime->getCurrentHour() == 21) //weather changes at  7 a.m and 9 p.m
-		weather->update(gametime->getCurrentDay(),gametime->getCurrentHour());
+{	
+	//TODO weather -> update
+	//weather->update(gametime->getCurrentDay(),gametime->getCurrentHour());
 
 	//cell->upd()
 	//fauna->upd()

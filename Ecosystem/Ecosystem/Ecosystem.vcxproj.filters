@@ -83,6 +83,9 @@
     <ClInclude Include="UI.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="IWeatherObserver.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\TexturesCom_Grass0198_M.jpg">

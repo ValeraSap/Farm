@@ -5,13 +5,14 @@
 #include "config.h"
 
 #include <SFML/Graphics.hpp>
+#include "IWeatherObserver.h"
+#include <list>
 using namespace sf;
 
  class Weather 
 {	
 	 
-public:
-	
+public:	
 		
 	/*Weather contains seasons and daytime? 
 	*Because  weather can be synonym for climate=>
@@ -20,7 +21,7 @@ public:
 	*/
 	   //how to implement cycle? => need iterator/structure?
 	
-		Seasons currentSeason;	
+	Seasons currentSeason;	
 	
 	//creates or returns singleton
 	static Weather* Instance();
@@ -28,7 +29,10 @@ public:
 	void update(int day, int hour);
 	void draw(RenderWindow* renderWindow);	
 
-	
+	void Attach(IWeatherObserver*);
+	void Detach(IWeatherObserver*);
+	void Notify();
+
 
 	 ~Weather();
 protected:	
@@ -44,7 +48,9 @@ private:
 	Rain rain;
 	Wind wind;	
 	
-	
+
+	std::list<IWeatherObserver*> observers;
+
 };
 #endif
 
