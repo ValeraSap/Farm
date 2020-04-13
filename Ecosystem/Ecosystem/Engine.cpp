@@ -21,6 +21,7 @@ Engine::Engine()
 
 	view.reset(sf::FloatRect(0, 0, renderWindow.getSize().x,
 		renderWindow.getSize().y));
+	gametime = GameTime::Instance();
 
 	//FieldCreator* fc = new GrassFieldCreator();
 	field = GrassFieldCreator().createField();          
@@ -72,6 +73,7 @@ void Engine::input()
 
 void Engine::update(float elapsed)
 {
+	gametime->update(elapsed);
 	field->update(elapsed);
 	userInterface.update(elapsed);
 }

@@ -16,6 +16,7 @@ private:
 
 	Field* field;
 	UI userInterface;
+	GameTime* gametime;
 
 	void input();
 	void update(float dtAsSeconds);

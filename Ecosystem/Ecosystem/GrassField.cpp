@@ -11,7 +11,7 @@ GrassField::GrassField()
 	//creating weather. Here cause it's inappropriate to do in grassfield & also for doing it in field creator'e we need it to be friend class to field
 	weather = Weather::Instance();
 
-	gametime = GameTime::Instatce();
+	gametime = GameTime::Instance();
 
 }
 void GrassField::update(float elapsed)

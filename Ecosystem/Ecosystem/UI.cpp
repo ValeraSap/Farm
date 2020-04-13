@@ -18,7 +18,7 @@ UI::UI()
 	windRose.setTexture(windRoseTexture);
 	pauseButton.setTexture(pauseButtonTexture);
 
-	gametime = GameTime::Instatce();										//Текст для Таймера
+	gametime = GameTime::Instance();										//Текст для Таймера
 	if (!font.loadFromFile("Fonts/timefont.ttf"))
 	{
 		std::cerr << "error loading font";

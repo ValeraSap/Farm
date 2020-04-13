@@ -8,6 +8,32 @@ Animator::Animator(Texture texture, int frameCount)    //texture, frame count
 	this->texture = texture;
 	currentFrame = 0;	
 	frameWidth = texture.getSize().x / frameCount;
+	frameHeight = texture.getSize().y;
+}
+
+
+void Animator::leftAnimation(float time) 
+{	
+	currentFrame += 500 * time;
+	if ((int)currentFrame > (frameCount / 2 )) {   
+		currentFrame=0;
+	}		
+}
+
+
+void Animator::rightAnimation(float time) 
+{
+	currentFrame += 500 * time;
+	if ((int)currentFrame > frameCount ) {
+		currentFrame = 0;
+	}
+}
+
+
+void Animator::draw(RenderWindow* renderWindow, Sprite* sprite)
+{
+	sprite->setTextureRect(IntRect(currentFrame, 0, frameWidth, frameHeight));
+	renderWindow->draw(*sprite);
 }
 
 
@@ -15,25 +41,3 @@ Animator::~Animator()
 {
 	//TODO
 }
-
-int Animator::leftAnimation(float time) {
-	//XXX    limitation doesn't work!
-	//currentFrame += 0.005 * time;
-	if (currentFrame >= (frameCount / 2 ) && currentFrame < frameCount-1) {     //bigger than first elem after middle && less than last
-		currentFrame++;
-	}
-	else {
-		currentFrame = frameCount / 2 ;
-	}
-	return currentFrame;
-}
-
-void Animator::rightAnimation() {
-	if (currentFrame < frameCount/2-1) {
-		currentFrame++;
-	}
-	else {
-		currentFrame = 0;  
-	}
-}
-

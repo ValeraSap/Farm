@@ -4,7 +4,7 @@ using namespace sf;
 
 class GameTime {
 public:
-	static GameTime* Instatce();
+	static GameTime* Instance();
 	~GameTime();
 
 	void update(float elapsedTime);

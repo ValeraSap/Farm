@@ -11,7 +11,7 @@ GameTime::GameTime(): currentDay(0), currentHour(0), currentMinute(0), timer(0)
 }
 
 GameTime* GameTime::instance = 0;
-GameTime* GameTime::Instatce() {
+GameTime* GameTime::Instance() {
 	if (instance == 0)
 		instance = new GameTime();
 	return instance;
