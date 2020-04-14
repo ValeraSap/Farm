@@ -17,6 +17,7 @@ private:
 	Field* field;
 	UI userInterface;
 	GameTime* gametime;
+	Weather* weather;
 
 	void input();
 	void update(float dtAsSeconds);

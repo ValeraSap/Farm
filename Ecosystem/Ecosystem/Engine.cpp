@@ -21,7 +21,9 @@ Engine::Engine()
 
 	view.reset(sf::FloatRect(0, 0, renderWindow.getSize().x,
 		renderWindow.getSize().y));
+
 	gametime = GameTime::Instance();
+	weather = Weather::Instance();
 
 	//FieldCreator* fc = new GrassFieldCreator();
 	field = GrassFieldCreator().createField();          
@@ -45,7 +47,8 @@ void Engine::start()
 
 		input();
 
-		while (lag >= MS_PER_UPDATE) { 
+		while (lag >= MS_PER_UPDATE)
+		{ 
 			update(elapsed);
 			lag -= MS_PER_UPDATE;
 		}
@@ -62,10 +65,12 @@ void Engine::input()
 	{
 		renderWindow.close();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::D)) {
+	if (Keyboard::isKeyPressed(Keyboard::D))
+	{
 		view.move(1.f, 0);
 	}
-	if (Keyboard::isKeyPressed(Keyboard::A)) {
+	if (Keyboard::isKeyPressed(Keyboard::A)) 
+	{
 		view.move(-1.f, 0);
 	}
 	
@@ -74,6 +79,7 @@ void Engine::input()
 void Engine::update(float elapsed)
 {
 	gametime->update(elapsed);
+	weather->update(gametime->getCurrentDay(), gametime->getCurrentHour());         //????????????????????????????
 	field->update(elapsed);
 	userInterface.update(elapsed);
 }

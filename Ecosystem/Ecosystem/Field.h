@@ -4,9 +4,12 @@
 
 #include <SFML/Graphics.hpp>
 #include "GameTime.h"
+#include "IWeatherObserver.h"
+#include <utility>
 using namespace sf;
-
-class Field  // нужен для того, чтобы все поля имели общий интерфейс
+//класс нужен для того, чтобы все поля имели общий интерфейс
+//IWeatherObserver если полям необходимо менять текстуры в зависимости от вр года или вр суток  
+class Field : public IWeatherObserver     //нужно ли здесь позаботиться о виртуальном наследовании?
 { 
 public:
 	
@@ -22,8 +25,7 @@ protected:
 
 	Sprite sprite;
 	Texture texture;	
-	GameTime* gametime;
-	
+	std::pair<int, int> size;	
 	
 };
 

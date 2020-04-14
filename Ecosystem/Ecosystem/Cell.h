@@ -1,20 +1,20 @@
 #pragma once
-#if !defined(__FarmClassDiagram_Cell_h)
-#define __FarmClassDiagram_Cell_h
 
 //#include "Animal.h"
+#include <utility>
 class Cell
 {
 public:
-	void Update(void);
-
-	//Field** field;
-	Cell();
+	void update(void);
+	
+	Cell(std::pair<int,int> spriteSizes, int pos);
 	~Cell();
 private:
+
+	std::pair<int, int> position;
+	std::pair<int, int> size;
 	int grassMass;
 	int CGI; //коэффициент привлекательности участка для травоядных
 	//Animal** herbivorous;
 };
 
-#endif
