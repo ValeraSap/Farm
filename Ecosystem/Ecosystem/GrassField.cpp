@@ -1,26 +1,7 @@
 ﻿#include "GrassField.h"
 
 
-
-GrassField::GrassField()
-{
-	// Binding texture with sprite
-	texture.loadFromFile("Textures/GField.jpg");
-	sprite.setTexture(texture);	
-	
-	size.first = sprite.getGlobalBounds().width;
-	size.second = sprite.getGlobalBounds().height;
-	
-	//на 1 спрайт 4 ячейки
-	int cellsNumb=4;
-	cells = new Cell*[4];
-
-	for (int i=0; i < 4; i++)
-	{
-		cells[i] = new Cell(size, i);
-	}
-}
-GrassField::GrassField(FieldSize enumFieldSize) {
+GrassField::GrassField(FieldSize enumFieldSize=FieldSize::SMALL) {
 
 	int fieldSize = static_cast<int>(enumFieldSize);
 
@@ -52,7 +33,6 @@ void GrassField::update(float elapsed)
 void GrassField::draw(RenderWindow* renderWindow)
 {
 	(*renderWindow).draw(sprite);
-	
 	
 }
 

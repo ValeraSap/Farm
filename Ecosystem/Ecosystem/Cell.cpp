@@ -16,7 +16,18 @@ Cell::Cell(std::pair<int, int> spriteSizes, int count):grassMass(30),CGI(.5f)
 
 	//std::cout << position.first << " " << position.second << std::endl;
 }
-
+int Cell::getCGI() 
+{
+	return CGI;
+ }
+int Cell::getGrassMass()
+{
+	return grassMass;
+}
+int Cell::getAnimalCount()
+{
+	return animalCount;
+}
 
 Cell::~Cell()
 {
