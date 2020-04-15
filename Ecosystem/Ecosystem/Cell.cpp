@@ -5,16 +5,17 @@ void Cell::update(void)
 	// TODO : implement
 }
 
-Cell::Cell(std::pair<int, int> spriteSizes, int count):grassMass(30),CGI(.5f)
+Cell::Cell(std::pair<int, int> spriteSizes, int count, int fieldSize):grassMass(30),CGI(.5f)
 {
-	//For Four cells!!! //TODO: make universal
-	count++; //cause we counting from 1 irl
-	size.first = spriteSizes.first / 2;
-	size.second = spriteSizes.second / 2;
-	position.first = size.first * (count % 2);
-	position.second = size.second * (int)(count / 2.1);
+	//Подготавливаем переменные к расчетам	
+	fieldSize *= 2;											//потому что в строке ячеек в два раза больше чем текстур поля
 
-	//std::cout << position.first << " " << position.second << std::endl;
+	size.first = spriteSizes.first / fieldSize;
+	size.second = spriteSizes.second / fieldSize;
+	position.first = size.first * (count % fieldSize);
+	position.second = size.second * (int)(count / fieldSize + 0.1f); //// 0.1 нужен для того, 2/2 давало 0, а не 1
+
+	std::cout << position.first << " " << position.second << std::endl;
 }
 int Cell::getCGI() 
 {

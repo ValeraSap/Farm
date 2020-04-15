@@ -2,7 +2,7 @@
 
 #define MS_PER_UPDATE 0.005 
 
-//defines texture count for field
+//Поле - квадратная матрица, размер поля - размер матрицы (х)
 enum class FieldSize{SMALL=1, MEDIUM=2};
 
 enum Rain { NO_RAINS, RAINS };

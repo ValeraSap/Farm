@@ -10,7 +10,7 @@ public:
 	int getGrassMass();
 	int getAnimalCount();
 	
-	Cell(std::pair<int,int> spriteSizes, int pos);
+	Cell(std::pair<int,int> spriteSizes, int pos,int fieldSize);
 	~Cell();
 private:
 
