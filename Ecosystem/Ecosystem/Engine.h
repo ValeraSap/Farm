@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "GrassField.h"
-#include "GrassFieldCreator.h"
 #include "UI.h"
 
 using namespace sf;

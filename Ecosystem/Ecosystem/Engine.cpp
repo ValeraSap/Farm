@@ -23,10 +23,9 @@ Engine::Engine()
 		renderWindow.getSize().y));
 
 	gametime = GameTime::Instance();
-	weather = Weather::Instance();
+	weather = Weather::Instance();	
+	field = new GrassField(FieldSize::MEDIUM);
 
-	//FieldCreator* fc = new GrassFieldCreator();
-	field = GrassFieldCreator().createField();          
 }
 
 void Engine::start()
@@ -72,6 +71,14 @@ void Engine::input()
 	if (Keyboard::isKeyPressed(Keyboard::A)) 
 	{
 		view.move(-1.f, 0);
+	}
+	if (Keyboard::isKeyPressed(Keyboard::W))
+	{
+		view.move(0, -1.f);
+	}
+	if (Keyboard::isKeyPressed(Keyboard::S))
+	{		
+		view.move(0, 1.f);
 	}
 	
 }

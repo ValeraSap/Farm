@@ -3,6 +3,7 @@
 #include "Weather.h"
 #include "Field.h"
 #include "Cell.h"
+#include "config.h"
 
 class GrassField :	public Field //need singleon!
 {
@@ -14,6 +15,7 @@ public:
 	void weatherChanged(Seasons, Rain, Wind, TimeOfDay); //использовать кортеж вместо 4 параметров?
 
 	GrassField();
+	GrassField(FieldSize);
 	~GrassField();
 private:
 	
