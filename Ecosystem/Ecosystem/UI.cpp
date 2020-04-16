@@ -45,33 +45,6 @@ UI::UI()
 		400.f / menuFrame.getLocalBounds().width,
 		70.f / menuFrame.getLocalBounds().height);
 
-	/*******************************************************************************
-	*getLocalBounds() возвращает размеры спрайта в системе координат самого спрайта 
-	*(т.е. без изменений от вызовов setRotation, setScale().
-	*getGlobalBounds() же, возвращает размеры спрайта в глобальной системе координат,
-	*т.е. с учетом всех трансформаций.
-	********************************************************************************/
-	int spritesDistance=10; 
-
-	menuFrame.setPosition(0, 0);											//Позиции
-	int posX = 5, posY = menuFrame.getGlobalBounds().height/2;
-	std::cout << posX << std::endl;
-
-	pauseButton.setPosition(posX, posY- pauseButton.getGlobalBounds().height/2);
-	posX += pauseButton.getGlobalBounds().width + spritesDistance;
-	std::cout << posX << std::endl;
-
-	timer.setPosition(posX, posY - timer.getCharacterSize() / 2);
-	posX += timer.getCharacterSize() * 2.1 + spritesDistance;
-	std::cout << posX << std::endl;
-	//XXX
-	windRose.setPosition(posX, posY - windRose.getGlobalBounds().height / 2);
-	posX += windRose.getGlobalBounds().width + spritesDistance;
-	std::cout << posX << std::endl;
-
-	rainNotifier.setPosition(posX, posY - rainNotifier.getGlobalBounds().height / 2);
-
-
 }
 void UI::weatherChanged(Seasons s, Rain r, Wind w, TimeOfDay t) {
 
@@ -79,16 +52,47 @@ void UI::weatherChanged(Seasons s, Rain r, Wind w, TimeOfDay t) {
 }
 
 void UI::update(float elapsed) {
-	//gametime->update(elapsed);
+
+	//if (Mouse::isButtonPressed(Mouse::Left)) {
+		//Vector2i pixelPos = Mouse::getPosition(window);//забираем коорд курсора
+	//}
+	
 	timer.setString(std::to_string(gametime->getCurrentHour()) 
 		+ ':' + std::to_string(gametime->getCurrentMinute()));
 
 }
-void UI::draw(RenderWindow* rw) {
-	rw->draw(menuFrame);
-	rw->draw(pauseButton);
-	rw->draw(timer);
-	rw->draw(windRose);
+void UI::draw(RenderWindow &window) {
+
+	Vector2f center = window.getView().getCenter();
+	Vector2f size = window.getView().getSize();
+
+	/*******************************************************************************
+*getLocalBounds() возвращает размеры спрайта в системе координат самого спрайта
+*(т.е. без изменений от вызовов setRotation, setScale().
+*getGlobalBounds() же, возвращает размеры спрайта в глобальной системе координат,
+*т.е. с учетом всех трансформаций.
+********************************************************************************/
+
+	int spritesDistance = 10;
+	menuFrame.setPosition(center.x - size.x / 2 + spritesDistance, center.y - size.y / 2 + spritesDistance);		//Позиции
+	
+	int posX = menuFrame.getPosition().x+spritesDistance, posY = menuFrame.getPosition().y + menuFrame.getGlobalBounds().height / 2;
+	pauseButton.setPosition(posX, posY - pauseButton.getGlobalBounds().height / 2);
+	posX += pauseButton.getLocalBounds().width + spritesDistance;
+
+	timer.setPosition(posX, posY- timer.getCharacterSize()/2);
+	posX += timer.getCharacterSize() * 2.1 + spritesDistance;
+	
+	//XXX
+	windRose.setPosition(posX, posY - windRose.getGlobalBounds().height / 2);
+	posX += windRose.getLocalBounds().width + spritesDistance;
+
+	rainNotifier.setPosition(posX, posY - rainNotifier.getGlobalBounds().height / 2);
+
+	window.draw(menuFrame);
+	window.draw(pauseButton);
+	window.draw(timer);
+	window.draw(windRose);
 
 }
 

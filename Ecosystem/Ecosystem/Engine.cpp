@@ -44,10 +44,11 @@ void Engine::start()
 
 		//std::cout << dt.asMicroseconds() << std::endl;
 
+		
 		input();
 
-		while (lag >= MS_PER_UPDATE)
-		{ 
+		while (lag >= MS_PER_UPDATE)	
+		{			
 			update(elapsed);
 			lag -= MS_PER_UPDATE;
 		}
@@ -55,30 +56,35 @@ void Engine::start()
 		update(elapsed);
 		draw();
 
-
 	}
 }
 void Engine::input()
 {	
+	int fieldEndX = field->getSize().first, fieldEndY = field->getSize().second;
+
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		renderWindow.close();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::D))
+	if (Keyboard::isKeyPressed(Keyboard::D))									//Лучше вложенность или длинные списки условий?
 	{
-		view.move(1.f, 0);
+		if(view.getCenter().x+ view.getSize().x/2 <= fieldEndX)
+			view.move(1.f, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A)) 
 	{
-		view.move(-1.f, 0);
+		if(view.getCenter().x - view.getSize().x / 2 >=0)
+			view.move(-1.f, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::W))
 	{
-		view.move(0, -1.f);
+		if (view.getCenter().y - view.getSize().y / 2 >= 0)
+			view.move(0, -1.f);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S))
-	{		
-		view.move(0, 1.f);
+	{
+		if (view.getCenter().y + view.getSize().y / 2 <= fieldEndY)
+			view.move(0, 1.f);
 	}
 	
 }
@@ -96,9 +102,10 @@ void Engine::draw()
 	renderWindow.clear(Color::White);	
 
 	renderWindow.setView(view);
+
 	field->draw(&renderWindow);
 
-	userInterface.draw(&renderWindow);	
+	userInterface.draw(renderWindow);	
 	
 	
 

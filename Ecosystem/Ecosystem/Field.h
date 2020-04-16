@@ -16,7 +16,8 @@ public:
 	Field();
 	virtual ~Field();
 	
-	Sprite getSprite() const;		
+	Sprite getSprite() const;	
+	std::pair<int, int> getSize() const;
 
 	virtual void update(float elapsed)=0;
 	virtual void draw(RenderWindow* renderWindow)=0;

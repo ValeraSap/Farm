@@ -15,7 +15,7 @@ class UI : IWeatherObserver
 public:
 
 	void update(float elapsed);
-	void draw(RenderWindow* rw);
+	void draw(RenderWindow &rw);
 	void weatherChanged(Seasons, Rain, Wind, TimeOfDay);
 
 	UI();
