@@ -1,14 +1,12 @@
 #pragma once
+/********************************************************
+*	Класс для анимации лент спрайтов. Не предусмотрена анимация спрайтов 
+*	соединенных в виде матриц или разделенных на отдельные файлы. 
+*	Реализует собственный метод draw(). 
+*******************************************************/
 
 #include <SFML/Graphics.hpp>
 using namespace sf;
-
-/********************************************************
-		* What part of responsibilities animator should take?
-		*1)it can return current frame
-		*2)it can return sprite
-		*3)it can implement its own draw()
-		*********************************************************/
 
 class Animator  //for !a&1 count of frames
 {

@@ -1,4 +1,7 @@
 ﻿#pragma once
+/*
+*UI отрисовывает: время, дождь, розу ветров
+*/
 #include <SFML/Graphics.hpp>
 #include "GameTime.h"
 #include "config.h"
@@ -6,9 +9,6 @@
 
 using namespace sf;
 
-/*
-*UI будет отрисовывать пользователю текущее положение вещей: время, погоду и пр
-*/
 
 class UI : IWeatherObserver
 {

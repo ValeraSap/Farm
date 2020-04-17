@@ -1,5 +1,9 @@
 #pragma once
-
+/***************************************************
+* Травяное поле. 
+* weatherChanged - реализация абстрактного метода из интерфейса IWeatherObserver
+* меняет текстуры в зависимости от изменений сезонов, вр суток
+****************************************************/
 #include "Weather.h"
 #include "Field.h"
 #include "Cell.h"
@@ -13,15 +17,10 @@ public:
 	void update(float elapsed);
 	void draw(RenderWindow* renderWindow);
 	void weatherChanged(Seasons, Rain, Wind, TimeOfDay); //использовать кортеж вместо 4 параметров?
-
-	GrassField();
+	
 	GrassField(FieldSize);
 	~GrassField();
-private:
-	
+private:	
 	Cell** cells;
-
-/*	template <class T>  //will it work if private?
-	void weatherChanged(T changedParameter);*/
 };
 

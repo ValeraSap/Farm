@@ -1,9 +1,11 @@
 #pragma once
-#if !defined(__FarmClassDiagram_Weather_h)
-#define __FarmClassDiagram_Weather_h
-
+/*****************************************************************
+*	Weather contains seasons and daytime,
+*	because  weather can be synonym for climate=>
+*	=> weather can be extended and implemented by many climate types
+*	 Day time in its turn depends on seasons (longing)
+***********************************************************************/
 #include "config.h"
-
 #include <SFML/Graphics.hpp>
 #include "IWeatherObserver.h"
 #include <list>
@@ -12,13 +14,8 @@ using namespace sf;
  class Weather 
 {	
 	 
-public:	
-		
-	/*Weather contains seasons and daytime? 
-	*Because  weather can be synonym for climate=>
-	*=> weather can be extended and implemented by many climate types
-	* Day time in its turn depends on seasons
-	*/
+public:			
+	
 	   //how to implement cycle? => need iterator/structure?
 	
 	Seasons currentSeason;	
@@ -52,5 +49,5 @@ private:
 	std::list<IWeatherObserver*> observers;
 
 };
-#endif
+
 
