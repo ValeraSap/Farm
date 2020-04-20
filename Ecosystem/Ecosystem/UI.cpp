@@ -95,8 +95,17 @@ void UI::draw(RenderWindow &window) {
 	window.draw(windRose);
 
 }
-
-
+Vector2f UI::getSpriteCoordinates()
+{
+	//Vector2i coord = { coord.x=menuFrame.getGlobalBounds().left };
+	Vector2f coordinates(menuFrame.getGlobalBounds().left, menuFrame.getGlobalBounds().top);
+	return coordinates;
+}
+Vector2f UI::getSpriteSize()
+{
+	Vector2f sizes(menuFrame.getGlobalBounds().width, menuFrame.getGlobalBounds().height);
+	return sizes;
+}
 UI::~UI()
 {
 }

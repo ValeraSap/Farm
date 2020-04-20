@@ -18,6 +18,9 @@ public:
 	void draw(RenderWindow &rw);
 	void weatherChanged(Seasons, Rain, Wind, TimeOfDay);
 
+	Vector2f getSpriteCoordinates(); //если появится еще одно табло интерфейса, необходимо будет сделать еще метод
+	Vector2f getSpriteSize();
+
 	UI();
 	~UI();
 

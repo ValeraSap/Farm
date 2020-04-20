@@ -1,5 +1,7 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
+using namespace sf;
 /*********************************************
 * Поле делится на участки, которые имеют приоритет для травоядных при выпасе
 * CGI - коэффициент приклекательности участка для травоядного
@@ -7,7 +9,7 @@
 *********************************************/
 
 //#include "Animal.h"
-#include <utility>
+
 class Cell
 {
 public:
@@ -16,12 +18,12 @@ public:
 	int getGrassMass();
 	int getAnimalCount();
 	
-	Cell(std::pair<int,int> spriteSizes, int pos,int fieldSize);
+	Cell(Vector2f spriteSizes, int pos,int fieldSize);
 	~Cell();
 private:
 
-	std::pair<int, int> position;
-	std::pair<int, int> size;
+	Vector2f position;
+	Vector2f size;
 	int grassMass;
 	int CGI; 
 	int animalCount;//коэффициент привлекательности участка для травоядных

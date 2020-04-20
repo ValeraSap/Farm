@@ -18,7 +18,7 @@ public:
 	virtual ~Field();
 	
 	Sprite getSprite() const;	
-	std::pair<int, int> getSize() const;
+	Vector2f getSize() const;
 
 	virtual void update(float elapsed)=0;
 	virtual void draw(RenderWindow* renderWindow)=0;
@@ -27,7 +27,7 @@ protected:
 
 	Sprite sprite;
 	Texture texture;	
-	std::pair<int, int> size;	
+	Vector2f size;
 	
 };
 
